@@ -1,0 +1,9 @@
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY AUTO_INCREMENT,
+    Username VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    UserRole VARCHAR(20) DEFAULT 'Guest'
+);
+
+CREATE ROLE 'ReadOnlyUser';
+GRANT SELECT ON Users TO 'ReadOnlyUser';
